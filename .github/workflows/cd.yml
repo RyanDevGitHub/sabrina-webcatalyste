@@ -55,7 +55,7 @@ jobs:
                docker run -d \
                  --name $CONTAINER_NAME \
                  --restart unless-stopped \
-                 -p 8084:80 \
+                 -p 8085:80 \
                  $IMAGE_NAME
                
                # 5. BONNE PRATIQUE : Déconnexion après usage (Sécurité)
