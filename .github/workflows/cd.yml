@@ -7,41 +7,26 @@ on:
 jobs:
   docker-build-push:
     runs-on: ubuntu-latest
-    # J'ai ajouté un tag dynamique basé sur le nom du dépôt (meilleure pratique)
-    # Référence au nom du dépôt (par exemple, ryandevgithub/sabrina-coiffure)
-    env:
-      IMAGE_TAG: ghcr.io/${{ github.repository }}:latest 
-    
     permissions:
       contents: read # Lecture du code source
-      packages: write # Nécessaire pour pousser vers GHCR
-
+      packages: write #
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
       - name: 🔑 Login to GHCR
-        uses: docker/login-action@v3 # J'ai mis à jour la version de l'action de login
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # --- CORRECTION APPLIQUÉE ICI ---
-      - name: 🐳 Build and Push Docker image
-        uses: docker/build-push-action@v5 # Action recommandée
-        with:
-          # Assure que le contexte de construction est la racine du dépôt
-          context: . 
-          # Spécifie explicitement le chemin du Dockerfile (à la racine)
-          file: ./Dockerfile 
-          push: true
-          # Utilise le tag défini dans la variable d'environnement (meilleure pratique)
-          tags: ${{ env.IMAGE_TAG }}
-          # Utilisation de la mise en cache pour accélérer les builds suivants
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-      # ---------------------------------
+      - name: 🐳 Build Docker image
+        # Utilise le nouveau nom d'image
+        run: docker build -t ghcr.io/ryandevgithub/site-vitrine-web-catalyste:latest .
+
+      - name: 📤 Push Docker image
+        run: docker push ghcr.io/ryandevgithub/site-vitrine-web-catalyste:latest
 
   deploy:
     name: "🚀 Deploy to VPS"
@@ -56,32 +41,25 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Attention : Le nom de conteneur/image ici doit correspondre au repo
-            # J'utilise le nom de l'image tel que défini dans votre job 'docker-build-push' corrigé
             CONTAINER_NAME="site-vitrine-web-catalyste"
-            # J'ai mis à jour l'IMAGE_NAME pour correspondre au nouveau nom dans votre code
             IMAGE_NAME="ghcr.io/ryandevgithub/$CONTAINER_NAME:latest"
-            
-            # 1. Login sur le VPS
-            # J'ai laissé votre méthode de login, si elle fonctionne avec GITHUB_TOKEN sur le VPS
-            echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin 
-            
-            # 2. Nettoyage de l'ancien conteneur
-            docker stop $CONTAINER_NAME || true
-            docker rm $CONTAINER_NAME || true
-            
-            # 3. Pull la dernière image
-            docker pull $IMAGE_NAME
-            
-            # 4. Run nouveau conteneur
-            docker run -d \
-              --name $CONTAINER_NAME \
-              --restart unless-stopped \
-              -p 8084:80 \
-              $IMAGE_NAME
-            
-            # 5. Déconnexion après usage (Sécurité)
-            docker logout ghcr.io
+             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin 
+             
+               docker stop $CONTAINER_NAME || true
+               docker rm $CONTAINER_NAME || true
+               
+               # 3. Pull la dernière image (Ceci ne sera plus denied !)
+               docker pull $IMAGE_NAME
+               
+               # 4. Run nouveau conteneur
+               docker run -d \
+                 --name $CONTAINER_NAME \
+                 --restart unless-stopped \
+                 -p 8084:80 \
+                 $IMAGE_NAME
+               
+               # 5. BONNE PRATIQUE : Déconnexion après usage (Sécurité)
+               docker logout ghcr.io
 
-            # 6. Vérifie que le conteneur est bien lancé
-            docker ps -f name=$CONTAINER_NAME
+               # 6. Vérifie que le conteneur est bien lancé
+               docker ps -f name=$CONTAINER_NAME
