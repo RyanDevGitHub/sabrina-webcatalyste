@@ -1,0 +1,1169 @@
+ /* Configuration de base et palette de couleurs du DA WebCatalyst */
+ :root {
+   --color-primary: #8c30f5;
+   /* Violet foncé pour CTA et accentuation */
+   --color-secondary: #2ec5ce;
+   /* Bleu cyan pour équilibre */
+   /* --color-background: #f7f7f7; */
+   --color-text-dark: #111827;
+   --color-text-medium: #4b5563;
+ }
+
+ body {
+   font-family: "Inter", sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: var(--color-background);
+   color: var(--color-text-dark);
+ }
+
+ body {
+   font-family: 'Inter', sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f7f7f7;
+   color: #111827;
+ }
+
+ /* Styles de la Section Hero */
+ .hero-section {
+   width: 100%;
+   /* Enlever la hauteur fixe pour permettre au contenu de s'adapter */
+   min-height: 80vh;
+   position: relative;
+   background: #fff;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+ }
+
+ /* Styles de l'arrière-plan (Background Imagery) */
+ .background-img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+ }
+
+ /* Configuration de base et palette de couleurs du DA WebCatalyst */
+ :root {
+   --color-primary: #8c30f5;
+   /* Violet foncé pour CTA et accentuation */
+   --color-secondary: #2ec5ce;
+   /* Bleu cyan pour équilibre */
+   --color-background: #f7f7f7;
+   --color-text-dark: #111827;
+   --color-text-medium: #4b5563;
+ }
+
+ body {
+   font-family: 'Inter', sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: var(--color-background);
+   color: var(--color-text-dark);
+ }
+
+ /* Styles spécifiques pour le bouton Choisir */
+ .btn-choose {
+   padding: 8px 20px;
+   background-color: var(--color-primary);
+   color: #fff;
+   font-weight: 700;
+   border-radius: 8px;
+   transition: background-color 0.2s, transform 0.1s;
+ }
+
+ .btn-choose:hover {
+   background-color: #7a28e0;
+   transform: translateY(-1px);
+ }
+
+ /* Styles pour l'en-tête principal et le bouton RDV */
+ .btn-rdv-header {
+   padding: 10px 25px;
+   background-color: var(--color-primary);
+   color: #fff;
+   font-weight: 600;
+   border-radius: 8px;
+   transition: opacity 0.2s;
+ }
+
+ .btn-rdv-header:hover {
+   opacity: 0.9;
+ }
+
+ /* Styles de la navigation simplifiée */
+ .nav-bar-simple {
+   height: 64px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+   background-color: #fff;
+   border-bottom: 1px solid #e5e7eb;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+   position: sticky;
+   top: 0;
+   z-index: 50;
+ }
+
+ .logo-group {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+ }
+
+ .logo-img {
+   height: 32px;
+   /* Taille du logo */
+   width: 32px;
+   border-radius: 6px;
+ }
+
+ .logo-text-small {
+   font-size: 16px;
+   font-weight: 800;
+   color: var(--color-primary);
+ }
+
+ /* Styles du badge d'avis */
+ .rating-badge {
+   background-color: #fff;
+   border-radius: 12px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   padding: 20px;
+ }
+
+ .score-large {
+   font-size: 60px;
+   font-weight: 800;
+   line-height: 1;
+   color: var(--color-primary);
+ }
+
+ .star-icon {
+   color: orange;
+ }
+
+ /* Styles de la carte de service */
+ .service-card {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+   border-bottom: 1px solid #e5e7eb;
+ }
+
+ .service-card:last-child {
+   border-bottom: none;
+ }
+
+ /* Responsive Layout */
+ @media (min-width: 1024px) {
+   .main-layout-grid {
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     /* 2/3 pour le contenu, 1/3 pour la barre latérale */
+     gap: 40px;
+     padding-right: 20px;
+     /* Espace pour le contenu principal */
+   }
+
+   .sidebar-fixed {
+     position: sticky;
+     top: 84px;
+     /* Sous la nav bar */
+     align-self: flex-start;
+   }
+ }
+
+ /* Styles spécifiques pour le calendrier et les créneaux horaires */
+ .day-cell {
+   padding: 8px 0;
+   text-align: center;
+   cursor: pointer;
+   transition: background-color 0.1s;
+   border-radius: 6px;
+   font-weight: 500;
+ }
+
+ .day-cell.valid:hover {
+   background-color: #f3e8ff;
+   /* Violet très clair au survol */
+ }
+
+ .day-cell.closed {
+   cursor: not-allowed;
+   color: #d1d5db;
+   /* Gris désactivé */
+   background-color: #f9fafb;
+ }
+
+ .day-cell.selected {
+   background-color: var(--color-primary);
+   color: white;
+   box-shadow: 0 2px 5px rgba(140, 48, 245, 0.3);
+ }
+
+ .day-cell.today {
+   border: 2px solid var(--color-primary);
+ }
+
+ .day-cell.selected.today {
+   border: 2px solid white;
+ }
+
+ .slot-button {
+   padding: 8px 15px;
+   border: 1px solid #d1d5db;
+   border-radius: 6px;
+   font-weight: 600;
+   transition: background-color 0.1s, border-color 0.1s, color 0.1s;
+ }
+
+ .slot-button:hover {
+   background-color: #f3e8ff;
+   border-color: var(--color-primary);
+ }
+
+ .slot-button.selected {
+   background-color: var(--color-primary);
+   color: white;
+   border-color: var(--color-primary);
+ }
+
+ /* === Styles pour le Loader === */
+ .loader-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(255, 255, 255, 0.85);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   border-radius: 12px;
+   z-index: 40;
+   transition: opacity 0.3s;
+ }
+
+ .loader-spinner {
+   border: 4px solid #f3f3f3;
+   border-top: 4px solid var(--color-primary);
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   animation: spin 1s linear infinite;
+ }
+
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+ /* === Styles pour le Toast (Notification) === */
+ #toast {
+   position: fixed;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: var(--color-primary);
+   color: white;
+   padding: 15px 25px;
+   border-radius: 8px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   opacity: 0;
+   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+   z-index: 1000;
+   min-width: 300px;
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+ #toast.show {
+   opacity: 1;
+   transform: translate(-50%, 0);
+ }
+
+
+ @media (max-width: 1023px) {
+   .main-layout-grid {
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+   }
+ }
+
+ /* Animation Lightbox (Modale) */
+ .lightbox-transition {
+   /* Fond noir : Simple fondu enchaîné */
+   transition: opacity 0.3s ease-in-out;
+ }
+
+ .lightbox-content-transition {
+   /* Contenu (image) : Zoom et fondu avec une courbe d'accélération plus dynamique (plus "vivante") */
+   /* La fonction cubic-bezier crée un effet de dépassement (overshoot) */
+   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s ease-in-out;
+ }
+
+ /* Nouvelle classe pour l'animation de l'image LORS DU CHANGEMENT (Précédent/Suivant) */
+ .lightbox-image-transition {
+   /* Fondu enchaîné et léger décalage horizontal (translation) */
+   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+ }
+
+ .circle {
+   position: absolute;
+   border-radius: 50%;
+   filter: blur(80px);
+   /* Ajout d'un flou pour un effet moderne */
+   opacity: 0.6;
+ }
+
+ /* Ajustement des couleurs et tailles des cercles pour l'effet */
+ .circle-purple {
+   width: 400px;
+   height: 400px;
+   top: 5%;
+   right: 0%;
+   background: #8c30f5;
+   /* Couleur 2 */
+ }
+
+ .circle-blue {
+   width: 350px;
+   height: 350px;
+   bottom: 10%;
+   left: 5%;
+   background: #2ec5ce;
+   /* Couleur 4 */
+ }
+
+ .overlay-blur {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backdrop-filter: blur(10px);
+   /* Flou général de l'arrière-plan */
+   background-color: rgba(255, 255, 255, 0.2);
+   /* Légère superposition blanche */
+ }
+
+ /* Styles de la Navbar */
+ /* Container nav-bar */
+ .nav-bar-container {
+   position: relative;
+   width: 100%;
+   height: 80px;
+   /* Hauteur de la navbar */
+   z-index: 10;
+   /* Assurez-vous qu'elle est au-dessus de tout */
+ }
+
+ /* Navbar principale */
+ .nav-bar {
+
+   /* position: absolute; */
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 80px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 40px;
+   /* Augmenté pour desktop */
+   box-sizing: border-box;
+   background-color: rgba(255, 255, 255, 0.9);
+   /* Fond légèrement transparent */
+   backdrop-filter: blur(5px);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ /* Menu de navigation */
+ .nav-menu {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ /* Logo */
+ .logo {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   cursor: pointer;
+ }
+
+ .logo-icon {
+   position: relative;
+   width: 32px;
+   height: 32px;
+ }
+
+ .logo-color {
+   position: absolute;
+ }
+
+ .color1 {
+   width: 20.16px;
+   height: 9.32px;
+   top: 22.68px;
+   left: 0.66px;
+   background: #f22bb2;
+ }
+
+ .color2 {
+   width: 9.32px;
+   height: 23.01px;
+   top: 0;
+   left: 1.14px;
+   background: #8c30f5;
+ }
+
+ .color3 {
+   width: 20.16px;
+   height: 9.32px;
+   top: 0;
+   left: 11.18px;
+   background: #fe9a22;
+ }
+
+ .color4 {
+   width: 9.32px;
+   height: 23.01px;
+   top: 8.44px;
+   left: 22.03px;
+   background: #2ec5ce;
+ }
+
+ .logo-text {
+   font-family: Inter, sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+   /* Plus de poids pour le texte du logo */
+   color: #111827;
+ }
+
+ /* Liens de navigation */
+ .nav-links {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+ }
+
+ .nav-item button {
+   font-family: Inter, sans-serif;
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 20px;
+   color: #4b5563;
+   /* Couleur de lien neutre */
+   padding: 8px 12px;
+   background: none;
+   border: none;
+   cursor: pointer;
+   border-radius: 6px;
+   transition: background-color 0.2s;
+ }
+
+ .nav-item button:hover {
+   background-color: #f3f4f6;
+ }
+
+ /* Boutons stores */
+ .btn-app {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+ .store-btn a {
+   /* display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            padding: 8px 12px; 
+            background-color: #111827;
+            color: #fff; */
+   /* border-radius: 8px;  */
+   /* font-family: Inter, sans-serif;
+            text-align: left;
+            transition: background-color 0.2s; */
+ }
+
+ .store-btn a:hover {
+   background-color: #212c40;
+ }
+
+ /* .store-btn a span.market-button-subtitle {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 1;
+            opacity: 0.8;
+        } */
+
+ /* .store-btn a span.market-button-title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1;
+        }
+         */
+ /* Bouton Hamburger (caché par défaut sur desktop) */
+ .hamburger-menu {
+   display: none;
+   font-size: 28px;
+   color: #111827;
+   cursor: pointer;
+   z-index: 1001;
+   background: none;
+   border: none;
+   padding: 10px;
+   line-height: 1;
+ }
+
+ /* Styles de la section de contenu principal (Hero Content) */
+ .main-content {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 80px 40px;
+   /* Padding ajusté pour laisser de l'espace à la navbar */
+   max-width: 1200px;
+   margin: 0 auto;
+   flex-grow: 1;
+   /* Permet au contenu de prendre de la place */
+   z-index: 5;
+ }
+
+ .text-section {
+   max-width: 500px;
+ }
+
+ .heading {
+   font-size: 48px;
+   font-weight: 800;
+   line-height: 1.2;
+   color: #1f2937;
+   margin-bottom: 20px;
+ }
+
+ .subheading {
+   font-size: 18px;
+   font-weight: 400;
+   line-height: 1.5;
+   color: #4b5563;
+   margin-bottom: 30px;
+ }
+
+ .cta-button {
+   display: inline-block;
+   padding: 12px 24px;
+   background-color: #8c30f5;
+   /* Couleur de CTA */
+   color: #fff;
+   font-size: 16px;
+   font-weight: 700;
+   border-radius: 10px;
+   text-decoration: none;
+   transition: background-color 0.3s, transform 0.1s;
+   box-shadow: 0 4px 10px rgba(140, 48, 245, 0.4);
+ }
+
+ .cta-button:hover {
+   background-color: #7a28e0;
+   transform: translateY(-1px);
+ }
+
+ /* Phone Section */
+ .phone-section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 50px;
+   /* Animation légère pour le téléphone */
+   animation: float 4s ease-in-out infinite;
+ }
+
+ .iphone-x {
+   position: relative;
+   width: 320px;
+   height: 640px;
+   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+   border-radius: 40px;
+ }
+
+ .iphone-x .frame {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   /* Utilisation d'une image SVG/Placeholder pour le cadre de téléphone */
+   content: '';
+   background-image: url('data:image/svg+xml;utf8,<svg width="320" height="640" viewBox="0 0 320 640" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="319" height="639" rx="39.5" fill="white" stroke="%231F2937" stroke-width="1"/><rect x="110" y="5" width="100" height="15" rx="7.5" fill="%231F2937"/></svg>');
+   background-size: cover;
+   z-index: 2;
+ }
+
+ .iphone-x .screen {
+   position: absolute;
+   top: 20px;
+   /* Ajuster pour la bordure du téléphone */
+   left: 50%;
+   transform: translateX(-50%);
+   width: 280px;
+   /* Largeur de l'écran interne */
+   height: 600px;
+   /* Hauteur de l'écran interne */
+   border-radius: 20px;
+   object-fit: cover;
+   z-index: 1;
+ }
+
+ /* Keyframes pour l'animation float */
+ @keyframes float {
+   0% {
+     transform: translateY(0px);
+   }
+
+   50% {
+     transform: translateY(-15px);
+   }
+
+   100% {
+     transform: translateY(0px);
+   }
+ }
+
+ /* Masquer les placeholders originaux de l'utilisateur */
+ .iphone-x img.frame {
+   display: none;
+ }
+
+ .iphone-x::after {
+   /* Remplacement du frame par un style CSS/SVG plus simple et fiable */
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   border: 8px solid black;
+   border-radius: 40px;
+   box-sizing: border-box;
+   z-index: 3;
+   pointer-events: none;
+ }
+
+ .iphone-x::before {
+   /* Notch/Encoche */
+   content: '';
+   position: absolute;
+   top: 8px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100px;
+   height: 20px;
+   background: black;
+   border-radius: 0 0 10px 10px;
+   z-index: 4;
+ }
+
+
+ /* ========================================================================= */
+ /* --- MEDIA QUERIES pour la Réactivité (Tablette et Téléphone) --- */
+ /* ========================================================================= */
+
+ @media (max-width: 992px) {
+
+   /* Navbar Responsiveness */
+   .nav-bar {
+     padding: 0 20px;
+     justify-content: space-between;
+     /* Garder Logo à gauche, Hamburger à droite */
+   }
+
+   /* Masquer les éléments de navigation traditionnels */
+   .btn-app {
+     display: none;
+   }
+
+   .nav-links {
+     display: none;
+   }
+
+   /* Afficher le bouton Hamburger */
+   .hamburger-menu {
+     display: block;
+   }
+
+   /* Menu mobile plein écran */
+   .nav-menu {
+     position: fixed;
+     top: 80px;
+     left: 0;
+     width: 100%;
+     height: calc(100vh - 80px);
+     flex-direction: column;
+     align-items: center;
+     padding: 40px 20px;
+     background-color: #fff;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     transform: translateX(-100%);
+     transition: transform 0.3s ease-in-out;
+     z-index: 1000;
+     justify-content: flex-start;
+     gap: 30px;
+     overflow-y: auto;
+   }
+
+   .nav-menu.active {
+     transform: translateX(0);
+   }
+
+   /* Réafficher et styliser les liens dans le menu mobile */
+   .nav-menu .nav-links {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     gap: 10px;
+   }
+
+   .nav-menu .nav-item {
+     width: 100%;
+     text-align: center;
+   }
+
+   .nav-menu .nav-item button {
+     width: 100%;
+     padding: 15px;
+     font-size: 16px;
+     font-weight: 700;
+     color: #111827;
+     background-color: #f3f4f6;
+   }
+
+   /* Hero Content Responsiveness */
+   .main-content {
+     flex-direction: column-reverse;
+     /* Téléphone en haut, Texte en bas */
+     padding: 40px 20px;
+     text-align: center;
+     gap: 40px;
+   }
+
+   .text-section {
+     max-width: 100%;
+   }
+
+   .heading {
+     font-size: 32px;
+     /* Réduction de la taille pour mobile */
+     margin-bottom: 15px;
+   }
+
+   .subheading {
+     font-size: 16px;
+     /* Réduction de la taille */
+     margin-bottom: 25px;
+   }
+
+   .phone-section {
+     margin-left: 0;
+     /* Réduction de la taille du téléphone pour les petits écrans */
+     transform: scale(0.85);
+     animation: none;
+     /* Désactiver l'animation float sur mobile pour la performance */
+   }
+
+   .iphone-x {
+     /* S'assurer qu'il ne dépasse pas la largeur de l'écran */
+     max-width: 90vw;
+   }
+
+   .hero-section {
+     /* Supprimer min-height si tout le contenu doit tenir */
+     min-height: auto;
+   }
+
+   .circle-purple {
+     top: 10%;
+     right: -50px;
+   }
+
+   .circle-blue {
+     bottom: 5%;
+     left: -50px;
+   }
+
+ }
+
+ /* Ajustements pour les très petits écrans (smartphones) */
+ @media (max-width: 640px) {
+   .nav-bar {
+     padding: 0 10px;
+   }
+
+   .phone-section {
+     transform: scale(0.7);
+   }
+
+   .iphone-x {
+     /* Ajustement plus agressif pour les petits écrans */
+     width: 280px;
+     height: 560px;
+   }
+
+   .iphone-x .screen {
+     width: 240px;
+     height: 520px;
+   }
+
+   .heading {
+     font-size: 28px;
+   }
+ }
+
+ /* Styles spécifiques pour le bouton Choisir */
+ .btn-choose {
+   padding: 8px 20px;
+   background-color: var(--color-primary);
+   color: #fff;
+   font-weight: 700;
+   border-radius: 8px;
+   transition: background-color 0.2s, transform 0.1s;
+ }
+
+ .btn-choose:hover {
+   background-color: #7a28e0;
+   transform: translateY(-1px);
+ }
+
+ /* Styles pour l'en-tête principal et le bouton RDV */
+ .btn-rdv-header {
+   padding: 10px 25px;
+   background-color: var(--color-primary);
+   color: #fff;
+   font-weight: 600;
+   border-radius: 8px;
+   transition: opacity 0.2s;
+ }
+
+ .btn-rdv-header:hover {
+   opacity: 0.9;
+ }
+
+ /* Styles de la navigation simplifiée */
+ .nav-bar-simple {
+   height: 64px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+   background-color: #fff;
+   border-bottom: 1px solid #e5e7eb;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+   position: sticky;
+   top: 0;
+   z-index: 50;
+ }
+
+ .logo-group {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+ }
+
+ .logo-img {
+   height: 32px;
+   /* Taille du logo */
+   width: 32px;
+   border-radius: 6px;
+ }
+
+ .logo-text-small {
+   font-size: 16px;
+   font-weight: 800;
+   color: var(--color-primary);
+ }
+
+ /* Styles du badge d'avis */
+ .rating-badge {
+   background-color: #fff;
+   border-radius: 12px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   padding: 20px;
+ }
+
+ .score-large {
+   font-size: 60px;
+   font-weight: 800;
+   line-height: 1;
+   color: var(--color-primary);
+ }
+
+ .star-icon {
+   color: orange;
+ }
+
+ /* Styles de la carte de service */
+ .service-card {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+   border-bottom: 1px solid #e5e7eb;
+ }
+
+ .service-card:last-child {
+   border-bottom: none;
+ }
+
+ .main-footer {
+   background-color: var(--darkreader-background-000000, #000000);
+   color: var(--darkreader-text-ffffff, #e8e6e3);
+ }
+
+ /* Logo */
+ .logo {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   cursor: pointer;
+ }
+
+ .logo-icon {
+   position: relative;
+   width: 32px;
+   height: 32px;
+ }
+
+ .logo-color {
+   position: absolute;
+ }
+
+ .color1 {
+   width: 20.16px;
+   height: 9.32px;
+   top: 22.68px;
+   left: 0.66px;
+   background: #f22bb2;
+ }
+
+ .color2 {
+   width: 9.32px;
+   height: 23.01px;
+   top: 0;
+   left: 1.14px;
+   background: #8c30f5;
+ }
+
+ .color3 {
+   width: 20.16px;
+   height: 9.32px;
+   top: 0;
+   left: 11.18px;
+   background: #fe9a22;
+ }
+
+ .color4 {
+   width: 9.32px;
+   height: 23.01px;
+   top: 8.44px;
+   left: 22.03px;
+   background: #2ec5ce;
+ }
+
+ .logo-text {
+   font-family: Inter, sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+   /* Plus de poids pour le texte du logo */
+   color: #111827;
+ }
+
+ html {
+   scroll-behavior: smooth;
+ }
+
+ /* Conteneur principal des boutons (Amélioration UI/UX: Espacement clair) */
+ .btn-app.store-btn {
+   display: flex;
+   gap: 20px;
+   /* Augmentation de l'espace pour la distinction */
+   align-items: center;
+   justify-content: center;
+
+
+   border-radius: 12px;
+   /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+ }
+
+ /* Style de base des boutons (Amélioration UI/UX: Cible tactile, coins arrondis) */
+ .market-btn {
+   display: inline-flex;
+   flex-direction: column;
+   align-items: flex-start;
+   /* Alignement du texte à gauche */
+   padding: 0.6rem 1.2rem;
+   padding-left: 3.5rem;
+   /* Espace pour l'icône */
+   min-width: 200px;
+   /* Taille minimale pour une meilleure cible tactile */
+   height: 60px;
+   box-sizing: border-box;
+   border-radius: 10px;
+   transition: background-color 0.25s ease-in-out, box-shadow 0.2s, transform 0.1s;
+   border: 1px solid #ddd;
+   background-position: center left 1rem;
+   background-size: 1.8rem 1.8rem;
+   /* Icône légèrement plus grande */
+   background-repeat: no-repeat;
+   text-decoration: none;
+   cursor: pointer;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+   /* Ombre par défaut */
+ }
+
+ /* Effet Hover (Amélioration UX: Feedback Visuel) */
+ .market-btn:hover {
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+   transform: translateY(-2px);
+ }
+
+ /* Texte du titre (Amélioration UI: Lisibilité, Hiérarchie) */
+ .market-btn .market-button-title {
+   display: block;
+   font-size: 1.25rem;
+   font-weight: 700;
+   line-height: 1.2;
+ }
+
+ /* Texte du sous-titre (Amélioration Marketing/UX: CTA clair) */
+ .market-btn .market-button-subtitle {
+   display: block;
+   /* Changement ici : Ajout d'une petite marge pour séparer du titre */
+   margin-bottom: 0.1rem;
+   font-size: 0.85rem;
+   font-weight: 500;
+   line-height: 1;
+ }
+
+ /* --- Style Google Play (Clair) --- */
+ .google-btn {
+   background-color: #000000;
+   border-color: #000000;
+   /* Icône Google Play (colorée) */
+   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzVDREFERDsiIHBvaW50cz0iMjkuNTMsMCAyOS41MywyNTEuNTA5IDI5LjUzLDUxMiAyOTkuMDA0LDI1MS41MDkgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNCREVDQzQ7IiBwb2ludHM9IjM2OS4wNjcsMTgwLjU0NyAyNjIuMTc1LDExOS40NjcgMjkuNTMsMCAyOTkuMDA0LDI1MS41MDkgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNEQzY4QTE7IiBwb2ludHM9IjI5LjUzLDUxMiAyOS41Myw1MTIgMjYyLjE3NSwzODMuNTUxIDM2OS4wNjcsMzIyLjQ3IDI5OS4wMDQsMjUxLjUwOSAiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQ0E5NjsiIGQ9Ik0zNjkuMDY3LDE4MC41NDdsLTcwLjA2Myw3MC45NjFsNzAuMDYzLDcwLjk2MWwxMDguNjg4LTYyLjg3N2M2LjI4OC0zLjU5Myw2LjI4OC0xMS42NzcsMC0xNS4yNyAgTDM2OS4wNjcsMTgwLjU0N3oiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
+ }
+
+ .google-btn .market-button-title {
+   color: #ffffff;
+ }
+
+ .google-btn .market-button-subtitle {
+   color: #b0b0b0;
+ }
+
+ .google-btn:hover {
+   background-color: #333333;
+   /* Effet hover conservant le contraste */
+   border-color: #333333;
+ }
+
+ /* --- Style App Store (Sombre) (Amélioration Marketing: Branding Apple, Contraste) --- */
+ .apple-btn.market-btn-dark {
+   background-color: #000000;
+   border-color: #000000;
+   /* Icône Apple (blanche) pour le contraste */
+   background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnIGlkPSJYTUxJRF8yMjhfIj4KCTxwYXRoIGlkPSJYTUxJRF8yMjlfIiBkPSJNNDAuNzM4LDExMi4xMTljLTI1Ljc4NSw0NC43NDUtOS4zOTMsMTEyLjY0OCwxOS4xMjEsMTUzLjgyQzc0LjA5MiwyODYuNTIzLDg4LjUwMiwzMDUsMTA4LjIzOSwzMDUgICBjMC4zNzIsMCwwLjc0NS0wLjAwNywxLjEyNy0wLjAyMmM5LjI3My0wLjM3LDE1Ljk3NC0zLjIyNSwyMi40NTMtNS45ODRjNy4yNzQtMy4xLDE0Ljc5Ny02LjMwNSwyNi41OTctNi4zMDUgICBjMTEuMjI2LDAsMTguMzksMy4xMDEsMjUuMzE4LDYuMDk5YzYuODI4LDIuOTU0LDEzLjg2MSw2LjAxLDI0LjI1Myw1LjgxNWMyMi4yMzItMC40MTQsMzUuODgyLTIwLjM1Miw0Ny45MjUtMzcuOTQxICAgYzEyLjU2Ny0xOC4zNjUsMTguODcxLTM2LjE5NiwyMC45OTgtNDMuMDFsMC4wODYtMC4yNzFjMC40MDUtMS4yMTEtMC4xNjctMi41MzMtMS4zMjgtMy4wNjZjLTAuMDMyLTAuMDE1LTAuMTUtMC4wNjQtMC4xODMtMC4wNzggICBjLTMuOTE1LTEuNjAxLTM4LjI1Ny0xNi44MzYtMzguNjE4LTU4LjM2Yy0wLjMzNS0zMy43MzYsMjUuNzYzLTUxLjYwMSwzMC45OTctNTQuODM5bDAuMjQ0LTAuMTUyICAgYzAuNTY3LTAuMzY1LDAuOTYyLTAuOTQ0LDEuMDk2LTEuNjA2YzAuMTM0LTAuNjYxLTAuMDA2LTEuMzQ5LTAuMzg2LTEuOTA1Yy0xOC4wMTQtMjYuMzYyLTQ1LjYyNC0zMC4zMzUtNTYuNzQtMzAuODEzICAgYy0xLjYxMy0wLjE2MS0zLjI3OC0wLjI0Mi00LjY5Ny0wLjI0MmMtMTMuMDM1LDAtMjUuNTYzLDQuOTMxLTM1LjYxMSw4Ljg5M2MtNi45MzYsMi43MzUtMTIuOTI3LDUuMDk3LTE3LjA1OSw1LjA5NyAgIGMtNC42NDMsMC0xMC42NjgtMi4zOTEtMTcuNjQ1LTUuMTU5Yy05LjMzLTMuNzAzLTE5LjkwNS03Ljg5OS0zMS4xLTcuODk5Yy0wLjI2NywwLTAuNTMsMC4wMDMtMC43ODksMC4wMDggICBDNzguODk0LDczLjY0Myw1NC4yOTgsODguNTM1LDQwLjczOCwxMTIuMTE5eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPGc+Cgk8cGF0aCBpZD0iWE1MSURfMjMwXyIgZD0iTTIxMi4xMDEsMC4wMDJjLTE1Ljc2MywwLjY0Mi0zNC42NzIsMTAuMzQ1LTQ1Ljk3NCwyMy41ODNjLTkuNjA1LDExLjEyNy0xOC45ODgsMjkuNjc5LTE2LjUxNiw0OC4zNzkgICBjMC4xNTUsMS4xNywxLjEwNywyLjA3MywyLjI4NCwyLjE2NGMxLjA2NCwwLjA4MywyLjE1LDAuMTI1LDMuMjMyLDAuMTI2YzE1LjQxMywwLDMyLjA0LTguNTI3LDQzLjM5NS0yMi4yNTcgICBjMTEuOTUxLTE0LjQ5OCwxNy45OTQtMzMuMTA0LDE2LjE2Ni00OS43N0MyMTQuNTQ0LDAuOTIxLDIxMy4zOTUtMC4wNDksMjEyLjEwMSwwLjAwMnoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+ }
+
+ .apple-btn.market-btn-dark .market-button-title {
+   color: #ffffff;
+ }
+
+ .apple-btn.market-btn-dark .market-button-subtitle {
+   color: #b0b0b0;
+ }
+
+ .apple-btn.market-btn-dark:hover {
+   background-color: #333333;
+   /* Effet hover conservant le contraste */
+   border-color: #333333;
+ }
+
+ @media (max-width: 768px) {
+   .market-btn {
+     width: 100%;
+     /* S'assure que le bouton prend toute la largeur */
+     min-width: 0;
+     height: 50px;
+     /* Réduit la hauteur du bouton */
+     padding: 0.5rem 1rem;
+     padding-left: 3rem;
+     border-radius: 8px;
+
+     /* Réduction de la taille et ajustement de la position de l'icône */
+     background-size: 1.5rem 1.5rem;
+     background-position: center left 0.8rem;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+     /* Ombre plus subtile */
+   }
+
+   /* 3. Réduction de la taille des polices */
+
+   /* Titre du bouton ("Google Play" / "App Store") */
+   .market-btn .market-button-title {
+     font-size: 12px;
+     /* Taille réduite */
+     line-height: 1.1;
+   }
+
+   /* Sous-titre du bouton ("Télécharger sur") */
+   .market-btn .market-button-subtitle {
+     font-size: 10px;
+     /* Taille réduite */
+   }
+
+   .no-scroll {
+     overflow: hidden;
+   }
+ }
+
+ /* Responsive Layout */
+ @media (min-width: 1024px) {
+   .main-layout-grid {
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     /* 2/3 pour le contenu, 1/3 pour la barre latérale */
+     gap: 40px;
+     padding-right: 20px;
+     /* Espace pour le contenu principal */
+   }
+
+   .sidebar-fixed {
+     position: sticky;
+     top: 84px;
+     /* Sous la nav bar */
+     align-self: flex-start;
+   }
+ }
+
+ @media (max-width: 1023px) {
+   .main-layout-grid {
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+   }
+ }

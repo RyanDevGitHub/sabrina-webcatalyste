@@ -1,0 +1,10 @@
+# Ignorer les dossiers de configuration et temporaires
+.git
+.github
+.vscode
+
+# Ignorer les artefacts de construction potentiels de Buildx
+**/tmp/*
+**/temp/*
+*.log
+.dockerignore

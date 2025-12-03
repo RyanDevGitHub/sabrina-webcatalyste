@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabrina Coiffure - Réserver en Ligne</title>
+  <!-- Chargement de Tailwind CSS et de la police Inter -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Icônes pour les étoiles et autres éléments visuels -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="nav-bar-container">
+    <nav class="nav-bar">
+      <div class="nav-menu">
+        <div class="logo">
+          <div class="logo-icon">
+            <!-- Logo Colors -->
+            <div class="logo-color color1"></div>
+            <div class="logo-color color2"></div>
+            <div class="logo-color color3"></div>
+            <div class="logo-color color4"></div>
+          </div>
+          <div class="logo-text">WebCatalyste</div>
+        </div>
+
+        <!-- <div class="nav-links">
+          <div class="nav-item">
+            <a href="#section-problemes"><button>Problèmes qu’on résout</button></a>
+          </div>
+          <div class="nav-item">
+            <a href="#section-demarche"><button>Notre démarche d’ingénieurs</button></a>
+          </div>
+          <div class="nav-item">
+            <a href="#section-construction"><button>Ce qu’on construit</button></a>
+          </div>
+          <div class="nav-item">
+            <a href="#section-confiance"><button>Ce qui nous font confiance</button></a>
+          </div>
+        </div> -->
+        <div class="btn-app store-btn">
+          <!-- Bouton Google Play (Thème clair standard) -->
+          <a href="https://votre-lien-google.com" target="_blank" class="market-btn google-btn" role="button">
+
+            <!-- Amélioration Marketing: CTA très clair -->
+            <span class="market-button-subtitle">Télécharger sur</span>
+            <span class="market-button-title">Google Play</span>
+          </a>
+
+          <!-- Bouton App Store (Thème sombre pour le Branding et le Contraste) -->
+          <a href="https://votre-lien-apple.com" target="_blank" class="market-btn apple-btn market-btn-dark"
+            role="button">
+
+            <!-- Amélioration Marketing: CTA très clair -->
+            <span class="market-button-subtitle">Télécharger sur</span>
+            <span class="market-button-title">App Store</span>
+          </a>
+        </div>
+      </div>
+
+
+
+      <!-- Bouton Hamburger (Visible sur Mobile/Tablette) -->
+      <button class="hamburger-menu" aria-label="Ouvrir le menu">
+        &#9776; <!-- Icône Hamburger -->
+      </button>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-4 lg:p-6 bg-white shadow-xl rounded-lg mt-8 mb-8">
+
+      <!-- En-tête du Salon (Sabrina Coiffure) -->
+      <header class="mb-8 p-4 border-b border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-1">Sabrina REVOLVHAIR / CHEZ Y</h1>
+            <p class="text-gray-500 flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-sm"></i>
+              6 Rue de la Coutellerie 95000 Cergy
+            </p>
+          </div>
+          <!-- Bouton "Prendre RDV" en haut -->
+          <a href="#section-date-time" class="btn-rdv-header mt-4 sm:mt-0 w-full sm:w-auto text-center">
+            Prendre RDV
+          </a>
+        </div>
+      </header>
+
+      <!-- Galerie d'Images (Placeholders) - Maintenue pour la complétude -->
+      <section class="grid grid-cols-3 md:grid-cols-8 md:grid-rows-4 gap-4 mb-10 h-[480px]">
+        <!-- Grande Image Principale (4 colonnes / 4 rangées) -->
+        <div
+          class="col-span-3 md:col-span-4 md:row-span-4 bg-gray-100 rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-shadow h-full"
+          onclick="openLightbox(0)" data-index="0">
+          <img class="w-full h-full object-cover" src="/res/unnamed.jpg" alt="Photo principale du salon"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x800/581c87/ffffff?text=GALERIE+PRINCIPALE+(4x4)';" />
+        </div>
+        <!-- Miniatures (4 images) -->
+        <div
+          class="hidden md:block md:col-span-2 md:row-span-2 bg-gray-100 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:opacity-90"
+          onclick="openLightbox(1)" data-index="1">
+          <img class="w-full h-full object-cover" src="/res/unnamed.jpg" alt="Intérieur du salon"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x400/8c30f5/ffffff?text=Miniature+1+(2x2)';" />
+        </div>
+        <div
+          class="hidden md:block md:col-span-2 md:row-span-2 bg-gray-100 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:opacity-90"
+          onclick="openLightbox(2)" data-index="2">
+          <img class="w-full h-full object-cover" src="/res/unnamed-2.jpg" alt="Exemple de coiffure 1"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x400/8c30f5/ffffff?text=Miniature+2+(2x2)';" />
+        </div>
+        <div
+          class="hidden md:block md:col-span-2 md:row-span-2 bg-gray-100 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:opacity-90"
+          onclick="openLightbox(3)" data-index="3">
+          <img class="w-full h-full object-cover" src="/res/unnamed-3.jpg" alt="Exemple de coiffure 2"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x400/8c30f5/ffffff?text=Miniature+3+(2x2)';" />
+        </div>
+        <div
+          class="hidden md:block md:col-span-2 md:row-span-2 bg-gray-100 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:opacity-90"
+          onclick="openLightbox(4)" data-index="4">
+          <img class="w-full h-full object-cover" src="/res/unnamed-4.jpg" alt="Exemple de coiffure 3"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x400/8c30f5/ffffff?text=Miniature+4+(2x2)';" />
+        </div>
+      </section>
+
+      <!-- Contenu Principal (Prestations) et Sidebar (Avis/Horaires) -->
+      <div class="main-layout-grid" id="section-services">
+
+        <!-- Colonne Gauche : Services et Réservation -->
+        <div class="content-left">
+          <h2 class="text-2xl font-bold text-gray-700 mb-2">Réserver en ligne pour un RDV chez Sabrina REVOLVHAIR / CHEZ
+            Y</h2>
+          <p class="text-sm text-gray-500 mb-8">24h/24 - Gratuitement - Confirmation immédiate</p>
+
+          <!-- Section 1: Choix de la Prestation -->
+          <section class="mb-10">
+            <h3 class="text-xl font-extrabold text-gray-800 mb-4 border-l-4 border-violet-500 pl-3">1. Choix de la
+              prestation</h3>
+
+            <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-700 mb-4">FEMME</h4>
+              <!-- La logique pour choisir une prestation n'est pas implémentée, mais la section est conservée pour la structure -->
+              <p class="text-sm text-gray-500 italic mb-6">Sélectionnez une prestation ci-dessous.</p>
+
+              <!-- Services List -->
+              <div class="services-list">
+                <!-- Service 1 (On ajoute un attribut pour identifier la prestation choisie) -->
+                <div class="service-card" data-service-id="1">
+                  <div class="flex-grow">
+                    <h5 class="font-medium text-gray-800">Shampoing + Coupe + Coiffage cheveux courts</h5>
+                    <p class="text-sm text-gray-500">
+                      <i class="fa-solid fa-hourglass-half"></i> 30min <span class="mx-2">•</span>
+                      <span class="font-bold text-violet-600">51 €</span>
+                    </p>
+                  </div>
+                  <button class="btn-choose" onclick="selectService('Soin profond', '51 €')">Choisir</button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card" data-service-id="2">
+                  <div class="flex-grow">
+                    <h5 class="font-medium text-gray-800">Shampoing + Coupe + Coiffage cheveux longs</h5>
+                    <p class="text-sm text-gray-500">
+                      <i class="fa-solid fa-hourglass-half"></i> 50min <span class="mx-2">•</span>
+                      <span class="font-bold text-violet-600">75 €</span>
+                    </p>
+                  </div>
+                  <button class="btn-choose" onclick="selectService('Rituel au zitzitouné', '17 €')">Choisir</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2: Choix de la Date et de l'Heure (Calendrier) -->
+          <section class="mb-10" id="section-date-time">
+            <h3 class="text-xl font-extrabold text-gray-800 mb-4 border-l-4 border-violet-500 pl-3">2. Choix de la date
+              et de l'heure</h3>
+
+            <div id="calendar-slot-box" class="bg-white p-4 rounded-xl shadow-md border border-gray-100 relative">
+
+              <!-- Overlay de chargement (initialement caché) -->
+              <div id="reservation-loader" class="loader-overlay hidden">
+                <div class="loader-spinner mb-3"></div>
+                <p class="text-gray-700 font-medium">Confirmation en cours...</p>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- Conteneur du Calendrier -->
+                <div class="calendar-container">
+                  <div class="flex justify-between items-center mb-4 text-violet-700 font-bold">
+                    <button onclick="changeMonth(-1)" class="p-2 rounded-full hover:bg-violet-100 transition-colors">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span id="month-year-display" class="text-lg"></span>
+                    <button onclick="changeMonth(1)" class="p-2 rounded-full hover:bg-violet-100 transition-colors">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+
+                  <!-- Jours de la semaine -->
+                  <div class="grid grid-cols-7 gap-1 text-center text-sm font-medium mb-2 text-gray-500">
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mer</div>
+                    <div>Jeu</div>
+                    <div>Ven</div>
+                    <div>Sam</div>
+                    <div>Dim</div>
+                  </div>
+
+                  <!-- Grille des jours du mois (générée par JS) -->
+                  <div id="calendar-grid" class="grid grid-cols-7 gap-1">
+                    <!-- Les jours seront insérés ici par JavaScript -->
+                  </div>
+                </div>
+
+                <!-- Créneaux Horaires -->
+                <div>
+                  <h4 class="font-semibold text-lg text-gray-700 mb-4 border-b pb-2">Créneaux disponibles</h4>
+                  <div id="time-slots-container" class="space-y-3 h-64 overflow-y-auto pr-2">
+                    <!-- Les créneaux seront insérés ici par JavaScript -->
+                    <p class="text-gray-500 text-center py-10">Veuillez sélectionner une date pour voir les créneaux.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: Résumé de Réservation et CTA final -->
+          <section class="mt-8 p-6 bg-violet-600 text-white rounded-lg shadow-xl text-center">
+            <p class="font-bold text-xl mb-2">Prochaine étape : Confirmer la réservation</p>
+            <p id="reservation-summary" class="text-sm mb-4">
+              Prestation sélectionnée: *Aucune* | Date: *Aucune* | Heure: *Aucune*
+            </p>
+            <!-- Bouton de confirmation modifié pour appeler la fonction -->
+            <button id="confirm-button"
+              class="mt-4 bg-white text-violet-700 font-bold py-2 px-6 rounded-full hover:bg-violet-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              onclick="confirmReservation()">
+              Confirmer le RDV
+            </button>
+          </section>
+        </div>
+
+        <!-- Colonne Droite : Avis et Horaires (Maintenue) -->
+        <div class="content-right">
+          <div class="sidebar-fixed space-y-8">
+
+            <!-- Carte d'Avis Global -->
+            <section class="rating-badge">
+              <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <h3 class="semibold text-lg">Note globale</h3>
+                <span class="text-gray-500 text-sm">Avis</span>
+              </div>
+
+              <div class="flex items-center gap-4 mb-4">
+                <div class="score-large">4,50</div>
+                <div class="text-gray-600 text-sm">
+                  <div class="mb-1">
+                    <i class="fa-solid fa-star star-icon"></i>
+                    <i class="fa-solid fa-star star-icon"></i>
+                    <i class="fa-solid fa-star star-icon"></i>
+                    <i class="fa-solid fa-star star-icon"></i>
+                    <i class="fa-solid fa-star star-icon"></i>
+                  </div>
+                  <p class="font-medium">4,5 <span class="text-xs text-gray-400"> (Global)</span></p>
+                </div>
+              </div>
+
+              <div class="text-sm space-y-1 text-gray-600">
+                <p><span class="font-medium">Accueil</span> 4,0 <i class="fa-solid fa-star star-icon"></i></p>
+                <p><span class="font-medium">Propreté</span> 5,0 <i class="fa-solid fa-star star-icon"></i></p>
+                <p><span class="font-medium">Qualité de la prestation</span> 5,0 <i
+                    class="fa-solid fa-star star-icon"></i></p>
+                <p class="mt-2 text-xs text-gray-500">37 clients ont donné leur avis.</p>
+              </div>
+            </section>
+
+            <!-- Carte des Horaires d'Ouverture -->
+            <section class="rating-badge">
+              <h3 class="text-xl font-extrabold mb-4 border-b pb-3">Horaires d'ouverture</h3>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between">
+                  <span class="font-medium">Lundi</span>
+                  <span class="text-red-500">Fermé</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="font-medium">Mardi</span>
+                  <span class="text-gray-600">10:00 - 19:00</span>
+                </li>
+                <li class="flex justify-between font-bold text-violet-700">
+                  <span class="font-medium">Mercredi (Aujourd'hui)</span>
+                  <span class="text-gray-600">10:00 - 19:00</span>
+                </li>
+                <!-- Jour actuel accentué en violet -->
+                <li class="flex justify-between ">
+                  <span class="font-medium">Jeudi</span>
+                  <span>10:00 - 19:00</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="font-medium">Vendredi</span>
+                  <span class="text-gray-600">10:00 - 19:00</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="font-medium">Samedi</span>
+                  <span class="text-gray-600">10:00 - 18:00</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="font-medium">Dimanche</span>
+                  <span class="text-red-500">Fermé</span>
+                </li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TOAST Notification -->
+    <div id="toast" class="opacity-0">
+      <i class="fas fa-check-circle text-2xl"></i>
+      <span id="toast-message" class="font-semibold"></span>
+    </div>
+
+    <!-- Lightbox Modal (Carrousel) - Maintenue pour la complétude -->
+    <div id="lightbox-modal"
+      class="hidden fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4 opacity-0 lightbox-transition"
+      onclick="closeLightbox(event)">
+      <!-- Contenu du Carrousel -->
+      <div id="lightbox-content"
+        class="relative w-full max-w-4xl h-auto aspect-video scale-95 opacity-0 lightbox-content-transition"
+        onclick="event.stopPropagation()">
+        <button id="close-button" onclick="forceCloseLightbox()"
+          class="absolute top-4 right-4 text-white text-3xl font-bold p-2 rounded-full hover:bg-white hover:bg-opacity-20 transition-colors z-10">
+          &times;
+        </button>
+        <img id="lightbox-image" class="w-full h-full object-contain rounded-lg shadow-2xl lightbox-image-transition"
+          src="" alt="Image agrandie du salon" />
+        <button onclick="changeImage(-1)"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white p-4 text-3xl opacity-75 hover:opacity-100 transition-opacity">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="changeImage(1)"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white p-4 text-3xl opacity-75 hover:opacity-100 transition-opacity">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div id="lightbox-caption"
+          class="absolute bottom-4 left-0 right-0 text-center text-white text-sm bg-black bg-opacity-50 p-2 rounded-b-lg">
+        </div>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <!-- Conteneur principal du footer (Desktop/Mobile responsive) -->
+      <div class="max-w-7xl mx-auto py-16 px-4 md:px-8 lg:px-5 flex flex-col md:flex-row justify-between items-start">
+        <!-- Colonne de gauche: Logo, Liens et Copyright -->
+        <div class="flex flex-col gap-6 md:gap-8 footer-links-container">
+          <!-- Logo (reconstruit en SVG/Div pour la légèreté) -->
+          <div class="w-8 h-8 relative">
+            <!-- J'utilise un logo générique SVG pour la compatibilité avec Tailwind -->
+            <div class="logo-icon">
+              <!-- Logo Colors -->
+              <div class="logo-color color1"></div>
+              <div class="logo-color color2"></div>
+              <div class="logo-color color3"></div>
+              <div class="logo-color color4"></div>
+            </div>
+          </div>
+
+          <!-- Bloc de liens -->
+          <div class="flex flex-col gap-3">
+            <!-- Ligne 1 des liens -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 lg:gap-8 footer-link-group-1">
+              <a href="#"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Télécharger
+                maintenant</a>
+              <a href="#"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Licence</a>
+            </div>
+            <!-- Ligne 2 des liens -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 lg:gap-8 footer-link-group-2">
+              <a href="#section-apropos"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">À propos</a>
+              <a href="#section-fonctionnalites"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Fonctionnalités</a>
+              <a href="#section-tarifs"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Tarifs</a>
+              <a href="#section-carrieres"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Carrières</a>
+              <a href="#section-aide"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Aide</a>
+              <a href="#section-confidentialite"
+                class="text-white text-base font-normal leading-6 hover:text-indigo-400 transition">Confidentialité</a>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div class="text-gray-400 text-sm font-normal leading-5 mt-4">
+            © 2024 Hair-Pro. Tous droits réservés.
+          </div>
+        </div>
+
+        <!-- Colonne de droite: Boutons d'application -->
+        <div class="btn-app store-btn">
+          <!-- Bouton Google Play (Thème clair standard) -->
+          <a href="https://votre-lien-google.com" target="_blank" class="market-btn google-btn" role="button">
+            <!-- Amélioration Marketing: CTA très clair -->
+            <span class="market-button-subtitle">Télécharger sur</span>
+            <span class="market-button-title">Google Play</span>
+          </a>
+
+          <!-- Bouton App Store (Thème sombre pour le Branding et le Contraste) -->
+          <a href="https://votre-lien-apple.com" target="_blank" class="market-btn apple-btn market-btn-dark"
+            role="button">
+            <!-- Amélioration Marketing: CTA très clair -->
+            <span class="market-button-subtitle">Télécharger sur</span>
+            <span class="market-button-title">App Store</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>
