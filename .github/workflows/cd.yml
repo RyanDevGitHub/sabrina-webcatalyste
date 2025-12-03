@@ -23,10 +23,10 @@ jobs:
 
       - name: 🐳 Build Docker image
         # Utilise le nouveau nom d'image
-        run: docker build -t ghcr.io/ryandevgithub/site-vitrine-web-catalyste:latest .
+        run: docker build -t ghcr.io/ryandevgithub/sabrina-webcatalyste:latest .
 
       - name: 📤 Push Docker image
-        run: docker push ghcr.io/ryandevgithub/site-vitrine-web-catalyste:latest
+        run: docker push ghcr.io/ryandevgithub/sabrina-webcatalyste:latest
 
   deploy:
     name: "🚀 Deploy to VPS"
@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            CONTAINER_NAME="site-vitrine-web-catalyste"
+            CONTAINER_NAME="sabrina-webcatalyste"
             IMAGE_NAME="ghcr.io/ryandevgithub/$CONTAINER_NAME:latest"
              echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin 
              
